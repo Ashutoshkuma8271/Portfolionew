@@ -43,7 +43,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
       category: 'Official Portrait',
       location: 'Dubai International Financial Centre',
       year: '2025',
-      image: '/images/zeenat_about.jpg',
+      image: './images/zeenat_about.jpg',
       fallbackImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
       caption: 'Executive diplomatic monograph portrait captured at the DIFC Chancery suites, Dubai.',
     },
@@ -168,7 +168,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
             <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
 
             <LazyImage
-              src="/images/zeenat_about_color.jpg"
+              src="./images/zeenat_about_color.jpg"
               fallbackSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
               alt="Zeenat Kureshi Diplomatic Monograph Portrait"
               aspectRatio="aspect-[4/5]"

@@ -147,7 +147,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   aspectRatio="aspect-[4/5]"
                   containerClassName="w-full h-full"
                   className="w-full h-full object-cover object-center filter contrast-105 group-hover:scale-104 transition-transform duration-700"
-                  src="/images/zeenat_hero_color.jpg"
+                  src="./images/zeenat_hero_color.jpg"
                   fallbackSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuC6IHnCaef41g32aYh105zuRmheL7FwAT-AndGJukXlIE3t4L0szoFQEx8N8S3oPLqPmulPo5Oo776ceRauA2mrWttmN0hpVMmyTa0pTwujXGtjzvMUBiUugC_-F00w5D3skN_AK9FxGE5wHuyFUOuCnS9w6PXK7qD9McLtiTa4qfAhLXGi3BBaDbauoUWTQ5ZowUhwCKD9zWtPptwld2KaXrFj9Uge6Tg0vxx9dGPBUC0JjEbTLaxZ"
                 />
 
@@ -569,7 +569,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   aspectRatio="aspect-[4/5]"
                   containerClassName="w-full h-full"
                   className="w-full h-full object-cover object-center filter grayscale contrast-110 brightness-95 group-hover:grayscale-0 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105 transition-all duration-700 ease-out"
-                  src="/images/zeenat_manifesto_color.jpg"
+                  src="./images/zeenat_manifesto_color.jpg"
                   fallbackSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/20 to-transparent opacity-80 pointer-events-none group-hover:opacity-65 transition-opacity duration-500"></div>
