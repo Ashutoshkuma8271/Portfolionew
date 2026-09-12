@@ -29,11 +29,13 @@ npm run dev
 npm run build
 ```
 
-## 🌐 GitHub Pages Deployment
+## 🌐 Production Deployment
 
-This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys the site to GitHub Pages on every push to `main`.
+This project is optimized for deployment on **Vercel**, **Netlify**, or any modern static hosting platform with zero configuration.
 
-1. Go to your repository on GitHub: `https://github.com/Ashutoshkuma8271/Portfolionew`
-2. Navigate to **Settings** > **Pages**
-3. Under **Build and deployment** > **Source**, select **GitHub Actions**
-4. Push your changes to `main` — the website will be deployed automatically without blank page errors!
+### Vercel Deployment (Recommended)
+1. Import this repository into [Vercel](https://vercel.com).
+2. Framework preset: **Vite**
+3. Build command: `npm run build`
+4. Output directory: `dist`
+5. Connect your custom domain `zeenatkureshi.com` in Project Settings.
