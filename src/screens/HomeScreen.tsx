@@ -72,7 +72,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               {/* Clean, Non-Overcrowded Positioning Line */}
               <div className="py-1">
                 <p className="font-['Cinzel'] text-[13px] sm:text-[15px] lg:text-[16px] text-[#e9c176] font-medium leading-snug tracking-[0.15em] uppercase border-l-2 border-[#d4af37] pl-3.5">
-                  Film Producer <span className="text-[#f2ca50]/40 px-1.5">&bull;</span> Trade Commissioner <span className="text-[#f2ca50]/40 px-1.5">&bull;</span> Civic President
+                  Film Producer <span className="text-[#f2ca50]/40 px-1.5">&bull;</span> GCC–India Trade Commissioner <span className="text-[#f2ca50]/40 px-1.5">&bull;</span> National President
                 </p>
               </div>
 
@@ -159,8 +159,37 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         </div>
       </section>
 
+      {/* FEATURED MEDIA LOGOS STRIP */}
+      <div className="w-full bg-[#0a0908] border-y border-[#262015] py-6 px-5 lg:px-20 overflow-hidden">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#8a7f6c] tracking-[0.22em] uppercase shrink-0">
+            Featured In Global Media &amp; Publications:
+          </span>
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-6 sm:gap-10 opacity-70 hover:opacity-100 transition-opacity">
+            <span className="font-serif font-bold text-[14px] sm:text-[16px] tracking-widest text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              FORBES MIDDLE EAST
+            </span>
+            <span className="font-sans font-black text-[13px] sm:text-[15px] tracking-wider text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              CNBC-TV18
+            </span>
+            <span className="font-serif italic font-bold text-[14px] sm:text-[16px] tracking-widest text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              VARIETY
+            </span>
+            <span className="font-sans font-bold text-[13px] sm:text-[15px] tracking-wider text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              BLOOMBERG
+            </span>
+            <span className="font-serif font-semibold text-[13px] sm:text-[15px] tracking-wider text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              GULF NEWS
+            </span>
+            <span className="font-sans font-extrabold text-[12px] sm:text-[14px] tracking-widest text-[#d0c5af] hover:text-[#f2ca50] transition-colors">
+              THE ECONOMIC TIMES
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* SECTION 2: SOVEREIGN DIPLOMATIC PILLARS */}
-      <section className="w-full bg-[#0e0d0c] py-20 relative border-t border-[#231d14]">
+      <section className="w-full bg-[#0e0d0c] py-20 relative">
         <div className="max-w-[1440px] mx-auto px-5 lg:px-20 space-y-12">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2d2516] pb-6">
