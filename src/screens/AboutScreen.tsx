@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TIMELINE_EVENTS } from '../data/folioData';
 import { LazyImage } from '../components/LazyImage';
+import { ThreeDCard } from '../components/ThreeDCard';
 import { 
   ShieldCheck, 
   Award, 
@@ -120,7 +121,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
   const activePhoto = activePhotoIndex !== null ? GALLERY_PHOTOS[activePhotoIndex] : null;
 
   return (
-    <div className="w-full bg-[#131314] text-[#e5e2e3] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 max-w-[1440px] mx-auto space-y-16 sm:space-y-24">
+    <div className="w-full bg-[#0d0c0b] text-[#e5e2e3] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 max-w-[1440px] mx-auto space-y-16 sm:space-y-24">
       {/* Editorial Monograph Header */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="lg:col-span-7 space-y-6">
@@ -130,7 +131,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
               <span>Diplomatic Biography &amp; Lineage</span>
             </div>
             <h1 className="font-['Cinzel'] text-[28px] sm:text-[38px] lg:text-[44px] font-normal leading-tight text-[#f4efe6]">
-              Architect of <span className="italic font-serif text-[#f2ca50]">Sovereign Corridors</span>
+              Architect of <span className="italic font-serif text-gold-gradient">Sovereign Corridors</span>
             </h1>
           </div>
 
@@ -149,269 +150,87 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
           <div className="flex flex-wrap gap-3 pt-2">
             <button
               onClick={onOpenCollaborate}
-              className="px-6 py-3.5 bg-gradient-to-r from-[#d4af37] via-[#f2ca50] to-[#e6bc48] text-[#1a1402] font-['Montserrat'] text-[10.5px] font-bold tracking-[0.18em] uppercase hover:brightness-110 transition-all cursor-pointer shadow-lg rounded-lg"
+              className="px-6 py-3.5 bg-gradient-to-r from-[#d4af37] via-[#f2ca50] to-[#e6bc48] text-[#1a1402] font-['Montserrat'] text-[10.5px] font-bold tracking-[0.18em] uppercase hover:brightness-110 transition-all cursor-pointer shadow-lg rounded-lg flex items-center gap-2"
             >
-              Request Diplomatic Audience
+              <span>Request Diplomatic Audience</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
-        <div className="lg:col-span-5">
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85)] border border-[#d4af37]/45 hover:border-[#f2ca50] bg-[#161412] group transition-all duration-500 hover:shadow-[0_0_45px_rgba(242,202,80,0.3)]">
-            {/* Ambient Gold Backlight Flare */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#d4af37]/30 via-[#f2ca50]/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <ThreeDCard depth={10} glareOpacity={0.25} className="w-full max-w-[380px]">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85)] border border-[#d4af37]/45 hover:border-[#f2ca50] bg-[#161412] group transition-all duration-500 hover:shadow-[0_0_45px_rgba(242,202,80,0.3)]">
+              {/* Dynamic Ambient Gold Backlight */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#d4af37]/30 via-[#f2ca50]/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-            {/* Corner Notches */}
-            <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
-            <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
-            <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
-            <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
+              {/* Corner accents */}
+              <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
+              <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
+              <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
+              <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]/60 pointer-events-none z-20 group-hover:border-[#f2ca50] transition-colors"></div>
 
-            <LazyImage
-              src="./images/zeenat_about_color.jpg"
-              fallbackSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
-              alt="Zeenat Kureshi Diplomatic Monograph Portrait"
-              aspectRatio="aspect-[4/5]"
-              className="w-full h-full object-cover filter grayscale contrast-110 brightness-95 group-hover:grayscale-0 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105 transition-all duration-700 ease-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-[#0a0908]/20 to-transparent opacity-90 pointer-events-none group-hover:opacity-65 transition-opacity duration-500"></div>
-            <div className="absolute bottom-5 left-5 right-5 p-4 bg-[#0a0908]/92 backdrop-blur-md border border-[#d4af37]/35 group-hover:border-[#f2ca50]/60 rounded-xl shadow-lg transition-all duration-300 z-20">
-              <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#f2ca50] tracking-widest uppercase block">
-                Official Credential Holder
-              </span>
-              <span className="font-['Montserrat'] text-[12.5px] text-[#f4efe6] font-medium">
-                Office of the Trade Commissioner &bull; GCC Corridor
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Diplomatic Accreditations & Honours */}
-      <section className="bg-[#161412] p-6 sm:p-10 lg:p-14 border border-[#382f1e]/80 rounded-2xl space-y-8 shadow-xl">
-        <div className="max-w-2xl space-y-2">
-          <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-[0.24em]">
-            <Award className="w-3.5 h-3.5 text-[#f2ca50]" />
-            <span>Institutional Standing</span>
-          </div>
-          <h2 className="font-['Cinzel'] text-[23px] sm:text-[30px] lg:text-[34px] font-normal leading-snug text-[#f4efe6]">
-            Sovereign Accreditations &amp; Honours
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-[#0e0d0b] border border-[#2d2516] space-y-3 rounded-xl hover:border-[#d4af37] transition-colors">
-            <Award className="w-7 h-7 text-[#f2ca50]" />
-            <h4 className="font-['Cinzel'] text-[18px] text-[#f4efe6]">Bilateral Economic Envoy</h4>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Certified by the Joint Trade Council for pioneering the UAE-India Comprehensive Economic Partnership treaty conduits.
-            </p>
-          </div>
-
-          <div className="p-6 bg-[#0e0d0b] border border-[#2d2516] space-y-3 rounded-xl hover:border-[#d4af37] transition-colors">
-            <Globe className="w-7 h-7 text-[#e9c176]" />
-            <h4 className="font-['Cinzel'] text-[18px] text-[#f4efe6]">Transnational Film Producer</h4>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Accredited member of the International Producers Association, with selections across Cannes Marché, Venice, and Toronto.
-            </p>
-          </div>
-
-          <div className="p-6 bg-[#0e0d0b] border border-[#2d2516] space-y-3 rounded-xl hover:border-[#d4af37] transition-colors">
-            <ShieldCheck className="w-7 h-7 text-[#ffdea5]" />
-            <h4 className="font-['Cinzel'] text-[18px] text-[#f4efe6]">National Council President</h4>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Leading the statutory civic mandate for grassroots empowerment, enterprise grants, and boardroom diversity governance.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Photo Gallery Section with Lazy Loading & Lightbox */}
-      <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b border-[#382f1e]/80 pb-5">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[10px] font-bold uppercase tracking-[0.25em]">
-              <Camera className="w-4 h-4 text-[#f2ca50]" />
-              <span>Accredited Photography &amp; Archives</span>
-            </div>
-            <h2 className="font-['Cinzel'] text-[26px] sm:text-[34px] lg:text-[38px] text-[#f4efe6] font-normal leading-tight">
-              Diplomatic &amp; Executive Gallery
-            </h2>
-          </div>
-          <p className="font-['Montserrat'] text-[12.5px] sm:text-[13px] text-[#c8beaa] max-w-md font-light leading-relaxed">
-            Curated visual monographs spanning bilateral chancery dialogues, international film market delegations, and civic presidencies.
-          </p>
-        </div>
-
-        {/* 4:5 Aspect Ratio Photo Grid with Skeleton & Lazy Loading */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-          {GALLERY_PHOTOS.map((photo, idx) => (
-            <div
-              key={photo.id}
-              onClick={() => setActivePhotoIndex(idx)}
-              className="group relative aspect-[4/5] bg-[#14120f] rounded-2xl overflow-hidden border border-[#382f1e]/70 hover:border-[#d4af37] transition-all duration-500 cursor-pointer shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:shadow-[0_16px_36px_rgba(212,175,55,0.14)] flex flex-col justify-end"
-            >
-              {/* High-Resolution Gallery Image via LazyImage */}
               <LazyImage
-                src={photo.image}
-                fallbackSrc={photo.fallbackImage}
-                alt={photo.title}
+                src="./images/zeenat_about_color.jpg"
+                fallbackSrc="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
+                alt="Zeenat Kureshi Diplomatic Monograph Portrait"
                 aspectRatio="aspect-[4/5]"
-                containerClassName="absolute inset-0 w-full h-full"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out filter brightness-[0.9] group-hover:brightness-100 contrast-105"
+                containerClassName="w-full h-full"
+                className="w-full h-full object-cover filter contrast-105 group-hover:scale-104 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-transparent to-transparent opacity-80 pointer-events-none"></div>
 
-              {/* Cinematic Vignette Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-[#0a0908]/50 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-500 pointer-events-none z-10"></div>
-
-              {/* Category Badge & Zoom Indicator */}
-              <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none z-20">
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0a0907]/90 backdrop-blur-md border border-[#d4af37]/45 text-[#f2ca50] font-['Montserrat'] text-[9px] font-bold uppercase tracking-[0.2em] shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#f2ca50]"></span>
-                  <span>{photo.category}</span>
+              <div className="absolute bottom-4 left-4 right-4 p-3.5 bg-[#0a0908]/92 backdrop-blur-md rounded-xl border border-[#d4af37]/35 flex items-center justify-between z-20">
+                <div>
+                  <span className="font-['Montserrat'] text-[9px] font-bold text-[#f2ca50] tracking-[0.24em] uppercase block">
+                    Diplomatic Dossier
+                  </span>
+                  <span className="font-['Cinzel'] text-[12px] text-[#f4efe6]">
+                    Zeenat Kureshi &bull; Official Archive
+                  </span>
                 </div>
-
-                <div className="w-7 h-7 rounded-full bg-[#0a0907]/90 backdrop-blur-md border border-[#d4af37]/40 flex items-center justify-center text-[#e9c176] text-[10px] font-mono shadow-sm group-hover:scale-110 group-hover:border-[#f2ca50] group-hover:text-[#f2ca50] transition-all">
-                  <ZoomIn className="w-3.5 h-3.5" />
-                </div>
-              </div>
-
-              {/* Bottom Card Content with Smooth Lift */}
-              <div className="relative z-20 p-5 space-y-2 group-hover:-translate-y-0.5 transition-transform duration-300">
-                <span className="text-[9.5px] font-mono text-[#d4af37] tracking-[0.16em] uppercase block">
-                  {photo.location} &bull; {photo.year}
-                </span>
-                <h4 className="font-['Cinzel'] text-[17px] sm:text-[18px] text-[#f4efe6] group-hover:text-[#f2ca50] transition-colors leading-snug font-normal">
-                  {photo.title}
-                </h4>
-                <p className="text-[11.5px] text-[#c8beaa]/90 line-clamp-2 leading-relaxed font-['Montserrat'] font-light">
-                  {photo.caption}
-                </p>
-                <div className="pt-1.5 flex items-center justify-between border-t border-[#382f1e]/60 text-[10px] font-['Montserrat'] text-[#f2ca50] tracking-wider uppercase font-semibold">
-                  <span>View Archival Monograph</span>
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
+                <div className="w-7 h-7 rounded-full bg-[#181510] border border-[#d4af37]/60 flex items-center justify-center shrink-0">
+                  <span className="font-['Cinzel'] text-[9.5px] font-bold text-[#f2ca50]">ZK</span>
                 </div>
               </div>
             </div>
-          ))}
+          </ThreeDCard>
         </div>
-
-        {/* Enhanced Lightbox / Modal for Expanded View */}
-        {activePhoto && activePhotoIndex !== null && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/92 backdrop-blur-lg animate-in fade-in duration-200"
-            onClick={() => setActivePhotoIndex(null)}
-          >
-            <div
-              className="relative max-w-4xl w-full bg-[#14120f] border border-[#d4af37]/70 rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.9)] p-5 sm:p-7 space-y-4"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header Bar */}
-              <div className="flex items-center justify-between border-b border-[#382f1e]/70 pb-3">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className="px-2.5 py-1 rounded bg-[#1c1913] border border-[#d4af37]/45 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-widest">
-                    {activePhoto.category}
-                  </span>
-                  <span className="text-[10.5px] font-mono text-[#d4af37] tracking-wider uppercase hidden sm:inline-block">
-                    {activePhoto.location} &bull; {activePhoto.year}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <span className="text-[10.5px] font-mono text-[#a89d88] tracking-widest">
-                    {String(activePhotoIndex + 1).padStart(2, '0')} / {String(GALLERY_PHOTOS.length).padStart(2, '0')}
-                  </span>
-                  <button
-                    onClick={() => setActivePhotoIndex(null)}
-                    className="p-1.5 text-[#c8beaa] hover:text-[#f2ca50] bg-[#1a1712] hover:bg-[#252016] border border-[#3e3422] rounded-full cursor-pointer transition-colors"
-                    aria-label="Close photo preview"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Main Photo Showcase with Navigation Chevrons */}
-              <div className="relative max-h-[62vh] min-h-[280px] overflow-hidden rounded-xl bg-[#090807] flex items-center justify-center border border-[#382f1e]">
-                <LazyImage
-                  src={activePhoto.image}
-                  fallbackSrc={activePhoto.fallbackImage}
-                  alt={activePhoto.title}
-                  aspectRatio="aspect-auto"
-                  className="max-h-[62vh] w-auto max-w-full object-contain rounded"
-                />
-
-                {/* Left Navigation Chevron */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActivePhotoIndex((prev) => (prev !== null ? (prev - 1 + GALLERY_PHOTOS.length) % GALLERY_PHOTOS.length : 0));
-                  }}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-[#0a0907]/85 hover:bg-[#1a1712] text-[#f2ca50] border border-[#d4af37]/50 hover:border-[#f2ca50] transition-all cursor-pointer shadow-lg active:scale-95 z-20"
-                  aria-label="Previous photograph"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-
-                {/* Right Navigation Chevron */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActivePhotoIndex((prev) => (prev !== null ? (prev + 1) % GALLERY_PHOTOS.length : 0));
-                  }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-[#0a0907]/85 hover:bg-[#1a1712] text-[#f2ca50] border border-[#d4af37]/50 hover:border-[#f2ca50] transition-all cursor-pointer shadow-lg active:scale-95 z-20"
-                  aria-label="Next photograph"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Photo Description & Caption Footer */}
-              <div className="space-y-2 pt-1">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <h3 className="font-['Cinzel'] text-[20px] sm:text-[22px] text-[#f4efe6]">
-                    {activePhoto.title}
-                  </h3>
-                  <span className="sm:hidden text-[10px] font-mono text-[#d4af37] tracking-wider uppercase">
-                    {activePhoto.location} &bull; {activePhoto.year}
-                  </span>
-                </div>
-                <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] font-light leading-relaxed">
-                  {activePhoto.caption}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
       </section>
 
-      {/* Diplomatic Timeline */}
+      {/* Diplomatic & Strategic Timeline */}
       <section className="space-y-10">
-        <div className="max-w-2xl space-y-2">
+        <div className="space-y-2 border-b border-[#2d2516] pb-4">
           <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-[0.24em]">
-            <Briefcase className="w-3.5 h-3.5 text-[#f2ca50]" />
-            <span>Historical Trajectory</span>
+            <Award className="w-3.5 h-3.5" />
+            <span>Strategic Milestones</span>
           </div>
-          <h2 className="font-['Cinzel'] text-[28px] sm:text-[34px] text-[#f4efe6]">
-            Timeline of Mandates &amp; Appointments
+          <h2 className="font-['Cinzel'] text-[26px] sm:text-[34px] text-[#f4efe6]">
+            Chronology of <span className="italic font-serif text-gold-gradient">Statecraft &amp; Enterprise</span>
           </h2>
         </div>
 
-        <div className="relative border-l border-[#382f1e] ml-3 sm:ml-8 space-y-10 pl-6 sm:pl-10">
+        <div className="relative border-l-2 border-[#382f1e] ml-4 md:ml-8 space-y-10 py-4">
           {TIMELINE_EVENTS.map((event, idx) => (
-            <div key={idx} className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#131314] border-2 border-[#f2ca50] group-hover:bg-[#f2ca50] transition-colors"></div>
-              <div className="space-y-1.5 bg-[#161412] p-5 sm:p-6 rounded-xl border border-[#2d2516] hover:border-[#d4af37] transition-all">
-                <span className="font-mono text-[11px] font-bold text-[#f2ca50] tracking-widest uppercase">
-                  {event.year}
-                </span>
-                <h3 className="font-['Cinzel'] text-[20px] text-[#f4efe6]">
-                  {event.title}
-                </h3>
-                <span className="font-['Montserrat'] text-[12.5px] text-[#e9c176] block font-medium">
+            <div key={idx} className="relative pl-8 md:pl-12 group">
+              {/* Timeline marker node */}
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#14120f] border-2 border-[#d4af37] group-hover:border-[#f2ca50] group-hover:scale-125 transition-all shadow-[0_0_10px_rgba(212,175,55,0.4)]"></div>
+
+              <div className="p-6 bg-[#161412] border border-[#2d2516] group-hover:border-[#d4af37]/60 rounded-xl space-y-3 transition-all duration-300 shadow-lg">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="font-['Cinzel'] text-[18px] sm:text-[20px] text-[#f4efe6] group-hover:text-[#f2ca50] transition-colors">
+                    {event.title}
+                  </span>
+                  <span className="px-3 py-1 rounded bg-[#0a0908] border border-[#d4af37]/30 text-[#f2ca50] font-mono text-[11px] font-bold">
+                    {event.year}
+                  </span>
+                </div>
+
+                <div className="inline-block text-[10px] font-['Montserrat'] font-bold text-[#e9c176] uppercase tracking-wider">
                   {event.entity}
-                </span>
-                <p className="font-['Montserrat'] text-[13.5px] text-[#c8beaa] leading-relaxed pt-1 font-light">
+                </div>
+
+                <p className="font-['Montserrat'] text-[13px] sm:text-[13.5px] text-[#c8beaa] leading-relaxed font-light">
                   {event.description}
                 </p>
               </div>
@@ -419,6 +238,132 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onOpenCollaborate }) =
           ))}
         </div>
       </section>
+
+      {/* Photographic Monograph Archive / Lightbox Gallery */}
+      <section className="space-y-8">
+        <div className="space-y-2 border-b border-[#2d2516] pb-4">
+          <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-[0.24em]">
+            <Camera className="w-3.5 h-3.5" />
+            <span>Monograph Archive</span>
+          </div>
+          <h2 className="font-['Cinzel'] text-[26px] sm:text-[34px] text-[#f4efe6]">
+            Photographic <span className="italic font-serif text-gold-gradient">Archive &amp; Diplomatic Engagements</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {GALLERY_PHOTOS.map((photo, index) => (
+            <ThreeDCard key={photo.id} depth={8} glareOpacity={0.15}>
+              <div
+                onClick={() => setActivePhotoIndex(index)}
+                className="group relative bg-[#161412] border border-[#2d2516] hover:border-[#d4af37] rounded-xl overflow-hidden shadow-xl cursor-pointer transition-all duration-300 flex flex-col justify-between h-full"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#0c0b0a]">
+                  <LazyImage
+                    src={photo.image}
+                    fallbackSrc={photo.fallbackImage}
+                    alt={photo.title}
+                    aspectRatio="aspect-[16/10]"
+                    containerClassName="w-full h-full"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161412] via-transparent to-transparent opacity-80"></div>
+
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#0a0908]/85 backdrop-blur-md border border-[#d4af37]/30 text-[#f2ca50] font-['Montserrat'] text-[9px] font-bold uppercase tracking-wider">
+                    {photo.category}
+                  </div>
+
+                  <div className="absolute top-3 right-3 p-1.5 rounded-full bg-[#0a0908]/85 backdrop-blur-md border border-[#d4af37]/30 text-[#f2ca50] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ZoomIn className="w-3.5 h-3.5" />
+                  </div>
+                </div>
+
+                <div className="p-5 space-y-2">
+                  <div className="flex items-center justify-between text-[11px] text-[#9c8e76]">
+                    <span>{photo.location}</span>
+                    <span className="font-mono">{photo.year}</span>
+                  </div>
+                  <h3 className="font-['Cinzel'] text-[16px] text-[#f4efe6] group-hover:text-[#f2ca50] transition-colors leading-snug">
+                    {photo.title}
+                  </h3>
+                  <p className="font-['Montserrat'] text-[12px] text-[#c8beaa] line-clamp-2 font-light">
+                    {photo.caption}
+                  </p>
+                </div>
+              </div>
+            </ThreeDCard>
+          ))}
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      {activePhoto && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setActivePhotoIndex(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full bg-[#161412] border border-[#d4af37]/60 rounded-2xl overflow-hidden shadow-2xl space-y-4 p-4 sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-[#2d2516] pb-3">
+              <div>
+                <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#f2ca50] uppercase tracking-widest block">
+                  {activePhoto.category} &bull; {activePhoto.year}
+                </span>
+                <h3 className="font-['Cinzel'] text-[18px] sm:text-[22px] text-[#f4efe6]">
+                  {activePhoto.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => setActivePhotoIndex(null)}
+                className="p-2 rounded-full bg-[#0a0908] border border-[#382f1e] text-[#c8beaa] hover:text-[#f2ca50] transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-black">
+              <LazyImage
+                src={activePhoto.image}
+                fallbackSrc={activePhoto.fallbackImage}
+                alt={activePhoto.title}
+                aspectRatio="aspect-video"
+                containerClassName="w-full h-full"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="flex items-center justify-between pt-2">
+              <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] max-w-2xl font-light">
+                {activePhoto.caption}
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() =>
+                    setActivePhotoIndex((prev) =>
+                      prev !== null ? (prev - 1 + GALLERY_PHOTOS.length) % GALLERY_PHOTOS.length : 0
+                    )
+                  }
+                  className="p-2 rounded-lg bg-[#0a0908] border border-[#382f1e] text-[#f2ca50] hover:bg-[#201a10] cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() =>
+                    setActivePhotoIndex((prev) =>
+                      prev !== null ? (prev + 1) % GALLERY_PHOTOS.length : 0
+                    )
+                  }
+                  className="p-2 rounded-lg bg-[#0a0908] border border-[#382f1e] text-[#f2ca50] hover:bg-[#201a10] cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

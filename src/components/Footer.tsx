@@ -137,17 +137,6 @@ export const Footer: React.FC<FooterProps> = ({
               Executive Suite
             </h3>
             <ul className="space-y-2.5 font-sans text-[13px]">
-              {onOpenDesignMockups && (
-                <li>
-                  <button
-                    onClick={onOpenDesignMockups}
-                    className="hover:text-[#f2ca50] transition-colors cursor-pointer text-left flex items-center gap-1.5"
-                  >
-                    <span>3 Design Concepts</span>
-                    <span className="text-[9px] px-1.5 py-0.5 bg-[#f2ca50]/15 text-[#f2ca50] rounded border border-[#f2ca50]/30">Dossier</span>
-                  </button>
-                </li>
-              )}
               {onOpenAdminCms && (
                 <li>
                   <button

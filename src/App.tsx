@@ -4,13 +4,12 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { TabId, HomepageMockupId } from './types';
+import { TabId } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FloatingDirectDesk } from './components/FloatingDirectDesk';
 import { VipPortalModal } from './components/VipPortalModal';
 import { CollaborateModal, CollaborateMode } from './components/CollaborateModal';
-import { DesignMockupsModal } from './components/DesignMockupsModal';
 import { AdminCmsModal } from './components/AdminCmsModal';
 import { InvestorLeadModal } from './components/InvestorLeadModal';
 import { MediaKitModal } from './components/MediaKitModal';
@@ -27,11 +26,9 @@ export default function App() {
   const [isCollaborateOpen, setIsCollaborateOpen] = useState(false);
   const [collaborateMode, setCollaborateMode] = useState<CollaborateMode>('collaborate');
   const [isVipPortalOpen, setIsVipPortalOpen] = useState(false);
-  const [isDesignMockupsOpen, setIsDesignMockupsOpen] = useState(false);
   const [isAdminCmsOpen, setIsAdminCmsOpen] = useState(false);
   const [isInvestorLeadOpen, setIsInvestorLeadOpen] = useState(false);
   const [isMediaKitOpen, setIsMediaKitOpen] = useState(false);
-  const [activeMockup, setActiveMockup] = useState<HomepageMockupId>('sovereign-classic');
 
   // Synchronize browser history / URL hash
   useEffect(() => {
@@ -112,7 +109,6 @@ export default function App() {
       <Footer
         onSelectTab={handleSelectTab}
         onOpenAdminCms={() => setIsAdminCmsOpen(true)}
-        onOpenDesignMockups={() => setIsDesignMockupsOpen(true)}
         onOpenInvestorLead={() => setIsInvestorLeadOpen(true)}
         onOpenMediaKit={() => setIsMediaKitOpen(true)}
       />
@@ -127,16 +123,6 @@ export default function App() {
         isOpen={isCollaborateOpen}
         initialMode={collaborateMode}
         onClose={() => setIsCollaborateOpen(false)}
-      />
-
-      <DesignMockupsModal
-        isOpen={isDesignMockupsOpen}
-        onClose={() => setIsDesignMockupsOpen(false)}
-        activeMockup={activeMockup}
-        onSelectMockup={(id) => {
-          setActiveMockup(id);
-          setActiveTab('home');
-        }}
       />
 
       <AdminCmsModal

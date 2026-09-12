@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LEADERSHIP_INITIATIVES } from '../data/folioData';
 import { LazyImage } from '../components/LazyImage';
+import { ThreeDCard } from '../components/ThreeDCard';
 import { 
   Users, 
   Award, 
@@ -13,7 +14,8 @@ import {
   MessageCircle,
   Sparkles,
   Camera,
-  ChevronRight
+  ChevronRight,
+  ArrowRight
 } from 'lucide-react';
 
 interface WomenLeadershipScreenProps {
@@ -75,7 +77,7 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
   ];
 
   return (
-    <div className="w-full bg-[#131314] text-[#e5e2e3] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 max-w-[1440px] mx-auto space-y-16 sm:space-y-20">
+    <div className="w-full bg-[#0d0c0b] text-[#e5e2e3] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 max-w-[1440px] mx-auto space-y-16 sm:space-y-20">
       {/* Monograph Header with Civic Mandate */}
       <section className="max-w-4xl space-y-3">
         <div className="space-y-2">
@@ -84,7 +86,7 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
             <span>Statutory Civic Mandate</span>
           </div>
           <h1 className="font-['Cinzel'] text-[28px] sm:text-[38px] lg:text-[44px] font-normal leading-tight text-[#f4efe6]">
-            All India Jamiatul Quresh <span className="italic font-serif text-[#f2ca50]">Women Cell</span>
+            All India Jamiatul Quresh <span className="italic font-serif text-gold-gradient">Women Cell</span>
           </h1>
           <span className="font-['Montserrat'] text-[11px] sm:text-[12px] font-bold tracking-[0.16em] text-[#e9c176] uppercase block">
             Office of the National President — Zeenat Kureshi
@@ -97,21 +99,21 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
 
       {/* Impact Numbers */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-5 sm:p-7 bg-[#161412] border border-[#382f1e]/80 rounded-2xl shadow-xl">
-        <div className="space-y-1 p-3 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
-          <span className="font-serif text-[26px] sm:text-[32px] text-[#f2ca50] block font-light leading-none">120K+</span>
-          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider">Women Mobilized</span>
+        <div className="space-y-1 p-3.5 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
+          <span className="font-serif text-[26px] sm:text-[34px] text-gold-gradient block font-light leading-none">120K+</span>
+          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider block">Women Mobilized</span>
         </div>
-        <div className="space-y-1 p-3 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
-          <span className="font-serif text-[26px] sm:text-[32px] text-[#e9c176] block font-light leading-none">4,200</span>
-          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider">Enterprises Seed-Funded</span>
+        <div className="space-y-1 p-3.5 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
+          <span className="font-serif text-[26px] sm:text-[34px] text-gold-gradient block font-light leading-none">4,200</span>
+          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider block">Enterprises Seed-Funded</span>
         </div>
-        <div className="space-y-1 p-3 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
-          <span className="font-serif text-[26px] sm:text-[32px] text-[#f2ca50] block font-light leading-none">260+</span>
-          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider">Corporate Charters</span>
+        <div className="space-y-1 p-3.5 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
+          <span className="font-serif text-[26px] sm:text-[34px] text-gold-gradient block font-light leading-none">260+</span>
+          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider block">Corporate Charters</span>
         </div>
-        <div className="space-y-1 p-3 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
-          <span className="font-serif text-[26px] sm:text-[32px] text-[#e9c176] block font-light leading-none">18</span>
-          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider">Sovereign Conclaves</span>
+        <div className="space-y-1 p-3.5 rounded-xl bg-[#0e0d0b] border border-[#2d2516]">
+          <span className="font-serif text-[26px] sm:text-[34px] text-gold-gradient block font-light leading-none">18</span>
+          <span className="font-['Montserrat'] text-[9.5px] sm:text-[10px] font-bold text-[#c8beaa] uppercase tracking-wider block">Sovereign Conclaves</span>
         </div>
       </section>
 
@@ -120,150 +122,147 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
         <div className="space-y-2 border-b border-[#382f1e]/80 pb-4">
           <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-[0.24em]">
             <Award className="w-3.5 h-3.5" />
-            <span>Constitutional Mission</span>
+            <span>Four Pillars of Impact</span>
           </div>
-          <h2 className="font-['Cinzel'] text-[26px] sm:text-[32px] text-[#f4efe6]">
-            Mission &amp; Strategic Frameworks
+          <h2 className="font-['Cinzel'] text-[26px] sm:text-[34px] text-[#f4efe6]">
+            Sovereign Empowerment Frameworks
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-[#161412] border border-[#382f1e]/80 rounded-2xl space-y-3 shadow-lg hover:border-[#d4af37] transition-colors">
-            <Users className="w-7 h-7 text-[#f2ca50]" />
-            <h3 className="font-['Cinzel'] text-[19px] text-[#f4efe6]">Financial Sovereignty &amp; Micro-Grants</h3>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Direct disbursement of zero-collateral micro-grants enabling home-based ventures, artisanal cooperatives, and retail shops.
-            </p>
-          </div>
-
-          <div className="p-6 bg-[#161412] border border-[#382f1e]/80 rounded-2xl space-y-3 shadow-lg hover:border-[#d4af37] transition-colors">
-            <ShieldCheck className="w-7 h-7 text-[#e9c176]" />
-            <h3 className="font-['Cinzel'] text-[19px] text-[#f4efe6]">Legal Aid &amp; Family Rights Desks</h3>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Pro bono legal counsel, statutory rights protection, and institutional counseling desks in 14 tier-1 and tier-2 states.
-            </p>
-          </div>
-
-          <div className="p-6 bg-[#161412] border border-[#382f1e]/80 rounded-2xl space-y-3 shadow-lg hover:border-[#d4af37] transition-colors">
-            <Award className="w-7 h-7 text-[#ffdea5]" />
-            <h3 className="font-['Cinzel'] text-[19px] text-[#f4efe6]">Boardroom Parity &amp; Mentorship</h3>
-            <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
-              Training high-potential women professionals for independent board directorships, corporate committee appointments, and civic governance.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events & Conclaves with Visual Cards */}
-      <section className="space-y-8">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b border-[#382f1e]/80 pb-4">
-          <div>
-            <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#f2ca50] tracking-[0.24em] uppercase block">
-              Civic Calendar
-            </span>
-            <h2 className="font-['Cinzel'] text-[26px] sm:text-[32px] text-[#f4efe6]">
-              Upcoming Events &amp; Conclaves
-            </h2>
-          </div>
-          <button
-            onClick={() => {
-              const el = document.getElementById('volunteer-form');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="px-5 py-2.5 bg-gradient-to-r from-[#d4af37] to-[#f2ca50] text-[#1a1402] font-['Montserrat'] text-[10.5px] font-bold tracking-widest uppercase hover:brightness-110 transition-all cursor-pointer rounded-lg shadow-md"
-          >
-            Join as Member / Volunteer
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {UPCOMING_EVENTS.map((event) => (
-            <div key={event.id} className="bg-[#161412] border border-[#382f1e]/80 rounded-2xl overflow-hidden space-y-4 flex flex-col justify-between shadow-xl hover:border-[#d4af37] transition-colors">
-              <div>
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <LazyImage
-                    src={event.image}
-                    alt={event.title}
-                    aspectRatio="aspect-[16/10]"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-[#0a0907]/90 text-[#f2ca50] font-mono text-[9px] font-bold uppercase rounded border border-[#f2ca50]/40">
-                    {event.status}
+          {LEADERSHIP_INITIATIVES.map((initiative) => (
+            <ThreeDCard key={initiative.id} depth={8} glareOpacity={0.15}>
+              <div className="p-6 bg-[#161412] border border-[#382f1e]/80 hover:border-[#d4af37] rounded-2xl space-y-4 shadow-xl flex flex-col justify-between h-full transition-all">
+                <div className="space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#0e0d0b] border border-[#2d2516] flex items-center justify-center text-[#f2ca50]">
+                    <Users className="w-5 h-5" />
                   </div>
-                </div>
-
-                <div className="p-5 space-y-2.5">
-                  <h3 className="font-['Cinzel'] text-[18px] text-[#f4efe6] font-normal leading-snug">
-                    {event.title}
+                  <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#d4af37] uppercase tracking-widest block">
+                    {initiative.reach}
+                  </span>
+                  <h3 className="font-['Cinzel'] text-[18px] text-[#f4efe6]">
+                    {initiative.title}
                   </h3>
-                  <div className="space-y-1 text-[11.5px] text-[#c8beaa]">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5 text-[#f2ca50]" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-3.5 h-3.5 text-[#e9c176]" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
-                  <p className="font-['Montserrat'] text-[12.5px] text-[#c8beaa] leading-relaxed pt-1 font-light">
-                    {event.description}
+                  <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] leading-relaxed font-light">
+                    {initiative.description}
                   </p>
+
+                  <div className="space-y-1.5 pt-2 border-t border-[#231d14]">
+                    {initiative.pillars.map((p, i) => (
+                      <div key={i} className="flex items-center gap-2 text-[11.5px] text-[#a89d87]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f2ca50]"></span>
+                        <span>{p}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-[#2d2516] flex items-center justify-between text-[11px] text-[#8a7f6c] font-mono">
+                  <span>Impact: {initiative.impactMetric}</span>
+                  <span className="text-[#f2ca50]">Active</span>
                 </div>
               </div>
-
-              <div className="px-5 pb-5 pt-2 border-t border-[#2a2215] flex justify-between items-center text-[10.5px]">
-                <span className="text-[#8c8270] font-mono">{event.organizer}</span>
-                <span className="text-[#f2ca50] font-bold uppercase tracking-wider">Accredited</span>
-              </div>
-            </div>
+            </ThreeDCard>
           ))}
         </div>
       </section>
 
-      {/* Volunteer / Member Inquiry Form */}
-      <section id="volunteer-form" className="bg-[#161412] border border-[#d4af37]/50 rounded-2xl p-6 sm:p-10 lg:p-12 space-y-8 shadow-2xl">
-        <div className="max-w-2xl space-y-2 border-b border-[#2d2516] pb-5">
-          <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#f2ca50] tracking-widest uppercase block">
-            National Enrollment Desk
-          </span>
+      {/* Upcoming Summits & Conclaves */}
+      <section className="space-y-8">
+        <div className="space-y-2 border-b border-[#382f1e]/80 pb-4">
+          <div className="inline-flex items-center gap-2 text-[#f2ca50] font-['Montserrat'] text-[9.5px] font-bold uppercase tracking-[0.24em]">
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Summits &amp; Assemblies</span>
+          </div>
           <h2 className="font-['Cinzel'] text-[26px] sm:text-[34px] text-[#f4efe6]">
-            Member &amp; Volunteer Registration
+            Civic Leadership &amp; Conclave Calendar
           </h2>
-          <p className="font-['Montserrat'] text-[13px] text-[#c8beaa] font-light">
-            Apply to become a verified member, state volunteer coordinator, or institutional patron of the All India Jamiatul Quresh Women Cell.
-          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {UPCOMING_EVENTS.map((event) => (
+            <ThreeDCard key={event.id} depth={8} glareOpacity={0.15}>
+              <div className="bg-[#161412] border border-[#382f1e]/80 hover:border-[#d4af37] rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between h-full transition-all">
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#0c0b0a]">
+                  <LazyImage
+                    src={event.image}
+                    alt={event.title}
+                    aspectRatio="aspect-[16/10]"
+                    containerClassName="w-full h-full"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161412] via-transparent to-transparent opacity-80"></div>
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#0a0908]/90 backdrop-blur-md border border-[#d4af37]/30 text-[#f2ca50] text-[9.5px] font-bold font-['Montserrat'] uppercase tracking-wider">
+                    {event.status}
+                  </div>
+                </div>
+
+                <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-[11px] text-[#8a7f6c] font-mono">
+                      <Calendar className="w-3.5 h-3.5 text-[#f2ca50]" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[11px] text-[#8a7f6c] font-mono">
+                      <MapPin className="w-3.5 h-3.5 text-[#e9c176]" />
+                      <span>{event.location}</span>
+                    </div>
+                    <h3 className="font-['Cinzel'] text-[17px] text-[#f4efe6] pt-1">
+                      {event.title}
+                    </h3>
+                    <p className="font-['Montserrat'] text-[12.5px] text-[#c8beaa] leading-relaxed font-light">
+                      {event.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#2d2516]">
+                    <button
+                      onClick={onOpenCollaborate}
+                      className="w-full py-2.5 px-4 bg-[#0e0d0b] hover:bg-[#1c1913] border border-[#2d2516] hover:border-[#f2ca50] text-[#f4efe6] hover:text-[#f2ca50] font-['Montserrat'] text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-between cursor-pointer"
+                    >
+                      <span>Delegate Registration</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </ThreeDCard>
+          ))}
+        </div>
+      </section>
+
+      {/* Membership & Volunteer Secretariat Form */}
+      <section className="bg-[#14120f] border border-[#d4af37]/40 p-6 sm:p-10 rounded-2xl shadow-2xl space-y-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2d2516] pb-4">
+          <div className="space-y-1">
+            <span className="font-['Montserrat'] text-[9.5px] font-bold text-[#f2ca50] uppercase tracking-widest">
+              Civic Onboarding
+            </span>
+            <h2 className="font-['Cinzel'] text-[24px] sm:text-[30px] text-[#f4efe6]">
+              Join the Women Leadership Council
+            </h2>
+          </div>
+          <span className="text-[11px] font-mono text-[#8a7f6c]">National Membership Registry</span>
         </div>
 
         {formSubmitted ? (
-          <div className="bg-[#0e0d0b] border border-[#d4af37] p-8 rounded-xl text-center space-y-4 max-w-2xl mx-auto">
+          <div className="p-8 text-center space-y-4 bg-[#0d0c0a] rounded-xl border border-[#2d2516]">
             <div className="w-14 h-14 rounded-full bg-[#f2ca50]/15 text-[#f2ca50] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="font-['Cinzel'] text-[22px] text-[#f4efe6]">
-              Enrollment Registered Successfully
-            </h3>
-            <p className="font-['Montserrat'] text-[13.5px] text-[#c8beaa] leading-relaxed">
-              Welcome to the Women Cell sisterhood. Your registration credentials have been recorded at the National Secretariat.
+            <h3 className="font-['Cinzel'] text-[22px] text-[#f4efe6]">Membership Application Registered</h3>
+            <p className="font-['Montserrat'] text-[13.5px] text-[#c8beaa] max-w-md mx-auto">
+              Welcome to the National Women Cell network. Your membership token is <span className="text-[#f2ca50] font-mono font-bold">{membershipId}</span>. The Secretariat will connect with chapter onboarding guidelines.
             </p>
-            <div className="p-3.5 bg-[#161412] border border-[#382f1e] inline-block rounded-lg font-mono text-[13px] text-[#f2ca50]">
-              Membership ID: {membershipId}
-            </div>
-            <div className="pt-2">
-              <a
-                href={`https://wa.me/?text=Hello%20Office%20of%20Zeenat%20Kureshi,%20I%20have%20registered%20as%20a%20member%20with%20ID%20${membershipId}.`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#122416] border border-[#23582d] text-[#8ae899] font-['Montserrat'] text-[10.5px] font-bold tracking-widest uppercase hover:bg-[#1a3821] transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-[#38b04a]" />
-                <span>Join WhatsApp Member Broadcast</span>
-              </a>
-            </div>
+            <button
+              onClick={() => setFormSubmitted(false)}
+              className="px-6 py-2.5 bg-[#181510] border border-[#d4af37] text-[#f2ca50] hover:bg-[#d4af37] hover:text-[#1a1402] font-['Montserrat'] text-[10px] font-bold tracking-widest uppercase rounded-lg transition-all cursor-pointer"
+            >
+              Submit Another Registration
+            </button>
           </div>
         ) : (
           <form onSubmit={handleMemberSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
                 Full Name *
               </label>
@@ -271,12 +270,12 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
                 value={memberForm.fullName}
                 onChange={(e) => setMemberForm({ ...memberForm, fullName: e.target.value })}
                 required
-                placeholder="e.g. Fatima Zehra / Dr. Ananya Sharma"
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
+                placeholder="e.g. Dr. Ayesha Siddiqui"
+                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg font-['Montserrat']"
               />
             </div>
 
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
                 Email Address *
               </label>
@@ -285,76 +284,63 @@ export const WomenLeadershipScreen: React.FC<WomenLeadershipScreenProps> = ({ on
                 value={memberForm.email}
                 onChange={(e) => setMemberForm({ ...memberForm, email: e.target.value })}
                 required
-                placeholder="name@domain.com"
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
+                placeholder="ayesha@organization.org"
+                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg font-['Montserrat']"
               />
             </div>
 
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
-                WhatsApp Phone Number *
+                Phone / WhatsApp *
               </label>
               <input
                 value={memberForm.phone}
                 onChange={(e) => setMemberForm({ ...memberForm, phone: e.target.value })}
                 required
-                placeholder="+91 98000 00000 / +971 50 000 0000"
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
+                placeholder="+91 98000 00000"
+                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg font-['Montserrat']"
               />
             </div>
 
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
-                City &amp; State / Country *
+                City / State / Jurisdiction *
               </label>
               <input
                 value={memberForm.cityState}
                 onChange={(e) => setMemberForm({ ...memberForm, cityState: e.target.value })}
                 required
-                placeholder="e.g. Mumbai, Maharashtra / New Delhi / Dubai"
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
+                placeholder="Mumbai, Maharashtra / Dubai, UAE"
+                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg font-['Montserrat']"
               />
             </div>
 
-            <div className="md:col-span-2 space-y-1.5">
+            <div className="md:col-span-2 space-y-1">
               <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
-                Membership Category / Role Desired *
+                Membership Category *
               </label>
               <select
                 value={memberForm.interest}
                 onChange={(e) => setMemberForm({ ...memberForm, interest: e.target.value })}
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
+                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg font-['Montserrat']"
               >
                 <option value="General Member — All India Jamiatul Quresh Women Cell">General Member — All India Jamiatul Quresh Women Cell</option>
-                <option value="State / District Volunteer Coordinator">State / District Volunteer Coordinator</option>
-                <option value="Legal & Medical Advisory Panel">Legal &amp; Medical Advisory Panel</option>
+                <option value="Executive Board Fellow — Corporate Governance Track">Executive Board Fellow — Corporate Governance Track</option>
                 <option value="Micro-Enterprise Grant Applicant">Micro-Enterprise Grant Applicant</option>
-                <option value="Executive Boardroom Governance Fellow">Executive Boardroom Governance Fellow</option>
+                <option value="State Chapter Volunteer Envoy">State Chapter Volunteer Envoy</option>
+                <option value="International GCC Chapter Delegate">International GCC Chapter Delegate</option>
               </select>
-            </div>
-
-            <div className="md:col-span-2 space-y-1.5">
-              <label className="font-['Montserrat'] text-[10.5px] font-semibold text-[#c8beaa] uppercase tracking-wider block">
-                Brief Background &amp; Motivation
-              </label>
-              <textarea
-                value={memberForm.experience}
-                onChange={(e) => setMemberForm({ ...memberForm, experience: e.target.value })}
-                rows={3}
-                placeholder="Tell us about your profession, community involvement, or how you would like to contribute..."
-                className="w-full bg-[#0e0d0b] border border-[#382f1e] px-4 py-3 text-[13px] text-[#e5e2e3] focus:border-[#f2ca50] focus:outline-none rounded-lg"
-              />
             </div>
 
             <div className="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-3 border-t border-[#2d2516]">
               <span className="text-[10.5px] text-[#8c8270] uppercase tracking-wider font-mono">
-                Official Certification Issued Upon Approval
+                Civic Governance Code of Conduct Applies
               </span>
               <button
                 type="submit"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#d4af37] via-[#f2ca50] to-[#e6bc48] text-[#1a1402] font-['Montserrat'] text-[10.5px] font-bold tracking-widest uppercase hover:brightness-110 transition-all cursor-pointer rounded-lg shadow-lg"
               >
-                <span>Submit Membership Application</span>
+                <span>Submit Membership Dossier</span>
                 <Send className="w-3.5 h-3.5" />
               </button>
             </div>

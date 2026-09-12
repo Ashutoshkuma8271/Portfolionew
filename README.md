@@ -33,7 +33,7 @@ npm run build
 
 This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys the site to GitHub Pages on every push to `main`.
 
-1. Go to your repository on GitHub: `https://github.com/Ashutoshkuma8271/Portfolionew1`
+1. Go to your repository on GitHub: `https://github.com/Ashutoshkuma8271/Portfolionew`
 2. Navigate to **Settings** > **Pages**
 3. Under **Build and deployment** > **Source**, select **GitHub Actions**
 4. Push your changes to `main` — the website will be deployed automatically without blank page errors!

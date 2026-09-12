@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Skeleton } from './Skeleton';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -39,10 +40,10 @@ export const LazyImage: React.FC<LazyImageProps> = ({
 
   return (
     <div className={`relative overflow-hidden ${aspectRatio} ${containerClassName} bg-[#141312]`}>
-      {/* Skeleton Loading Shimmer Placeholder */}
+      {/* Luxury Skeleton Loading Shimmer Placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#171512] via-[#2a2418]/60 to-[#171512] animate-pulse">
-          <div className="w-full h-full bg-[linear-gradient(90deg,transparent_0%,rgba(242,202,80,0.08)_50%,transparent_100%)] animate-[shimmer_2s_infinite]" />
+        <div className="absolute inset-0 z-10">
+          <Skeleton variant="rectangular" className="w-full h-full rounded-none" />
         </div>
       )}
 

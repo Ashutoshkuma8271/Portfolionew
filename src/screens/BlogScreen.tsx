@@ -3,6 +3,7 @@ import { BLOG_POSTS } from '../data/folioData';
 import { BlogPost } from '../types';
 import { BookOpen, Search, ArrowRight, Clock, Calendar, Eye, Tag, X, Share2, CheckCircle2, Sparkles } from 'lucide-react';
 import { LazyImage } from '../components/LazyImage';
+import { ThreeDCard } from '../components/ThreeDCard';
 
 interface BlogScreenProps {
   onOpenCollaborate: () => void;

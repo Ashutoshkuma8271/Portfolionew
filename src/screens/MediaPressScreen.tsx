@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FILM_PROJECTS, PRESS_ITEMS } from '../data/folioData';
 import { LazyImage } from '../components/LazyImage';
+import { ThreeDCard } from '../components/ThreeDCard';
 import { 
   Film, 
   Newspaper, 

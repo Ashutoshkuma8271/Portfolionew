@@ -7,8 +7,6 @@ export type TabId =
   | 'blog'
   | 'contact';
 
-export type HomepageMockupId = 'sovereign-classic' | 'cinematic-noir' | 'minimal-atelier';
-
 export interface BlogPost {
   id: string;
   title: string;
