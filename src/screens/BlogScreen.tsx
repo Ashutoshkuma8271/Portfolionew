@@ -7,7 +7,6 @@ import { ThreeDCard } from '../components/ThreeDCard';
 
 interface BlogScreenProps {
   onOpenCollaborate: () => void;
-  onOpenAdmin?: () => void;
   onSelectArticle?: (article: BlogPost) => void;
 }
 

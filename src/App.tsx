@@ -94,7 +94,6 @@ export default function App() {
           <BlogScreen
             onOpenCollaborate={() => handleOpenCollaborate('collaborate')}
             onSelectArticle={() => {}}
-            onOpenAdmin={() => setIsAdminCmsOpen(true)}
           />
         )}
         {activeTab === 'contact' && (
