@@ -7,6 +7,7 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
   containerClassName?: string;
   aspectRatio?: string; // e.g. 'aspect-[16/10]', 'aspect-[4/5]', 'aspect-video', 'aspect-square'
+  priority?: boolean;
 }
 
 export const LazyImage: React.FC<LazyImageProps> = ({
@@ -16,6 +17,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   className = '',
   containerClassName = '',
   aspectRatio = 'aspect-[16/10]',
+  priority = false,
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -42,7 +44,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
     <div className={`relative overflow-hidden ${aspectRatio} ${containerClassName} bg-[#141312]`}>
       {/* Luxury Skeleton Loading Shimmer Placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 z-10">
+        <div className="absolute inset-0 z-10 pointer-events-none">
           <Skeleton variant="rectangular" className="w-full h-full rounded-none" />
         </div>
       )}
@@ -51,8 +53,9 @@ export const LazyImage: React.FC<LazyImageProps> = ({
       <img
         src={currentSrc}
         alt={alt}
-        loading="lazy"
+        loading={priority ? 'eager' : 'lazy'}
         decoding="async"
+        fetchPriority={priority ? 'high' : 'auto'}
         onLoad={() => setIsLoaded(true)}
         onError={handleError}
         className={`w-full h-full object-cover transition-all duration-700 ease-out ${

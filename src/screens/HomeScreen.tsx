@@ -130,6 +130,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     alt="Zeenat Kureshi Official Diplomatic & Cultural Portrait"
                     aspectRatio="aspect-[4/5]"
                     containerClassName="w-full h-full"
+                    priority={true}
                     className="w-full h-full object-cover object-center filter contrast-105 group-hover:scale-104 transition-transform duration-700"
                     src="./images/zeenat_hero_color.jpg"
                     fallbackSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuC6IHnCaef41g32aYh105zuRmheL7FwAT-AndGJukXlIE3t4L0szoFQEx8N8S3oPLqPmulPo5Oo776ceRauA2mrWttmN0hpVMmyTa0pTwujXGtjzvMUBiUugC_-F00w5D3skN_AK9FxGE5wHuyFUOuCnS9w6PXK7qD9McLtiTa4qfAhLXGi3BBaDbauoUWTQ5ZowUhwCKD9zWtPptwld2KaXrFj9Uge6Tg0vxx9dGPBUC0JjEbTLaxZ"
