@@ -1,36 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Bodoni Moda", Georgia, serif;
-  --font-sans: "Montserrat", "Hanken Grotesk", system-ui, -apple-system, sans-serif;
-  --font-headline: "Bodoni Moda", Georgia, serif;
+  --font-serif: "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Montserrat", "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --font-headline: "Cinzel", "Bodoni Moda", Georgia, serif;
   --font-display: "Cinzel", "Bodoni Moda", Georgia, serif;
-  --font-body: "Montserrat", "Hanken Grotesk", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Montserrat", system-ui, sans-serif;
   --font-cinzel: "Cinzel", Georgia, serif;
+  --font-cinzel-dec: "Cinzel Decorative", "Cinzel", Georgia, serif;
   --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-bodoni: "Bodoni Moda", Georgia, serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", "Montserrat", sans-serif;
 
-  --color-background: #0b0b0c;
-  --color-surface: #0f0f10;
-  --color-surface-dim: #0b0b0c;
-  --color-surface-bright: #343233;
-  --color-surface-container-lowest: #080809;
-  --color-surface-container-low: #141313;
-  --color-surface-container: #1a1919;
-  --color-surface-container-high: #242223;
-  --color-surface-container-highest: #302e2f;
-  --color-on-surface: #f0ece7;
-  --color-on-surface-variant: #cfc3ae;
-  --color-outline: #8f8778;
-  --color-outline-variant: #443d30;
+  --color-background: #080706;
+  --color-surface: #0e0d0b;
+  --color-surface-dim: #060505;
+  --color-surface-bright: #38342d;
+  --color-surface-container-lowest: #050504;
+  --color-surface-container-low: #12100e;
+  --color-surface-container: #181613;
+  --color-surface-container-high: #24201b;
+  --color-surface-container-highest: #322d25;
+  --color-on-surface: #f4efe6;
+  --color-on-surface-variant: #d5caa9;
+  --color-outline: #9c8e73;
+  --color-outline-variant: #4e4431;
   --color-primary: #f2ca50;
   --color-primary-container: #d4af37;
   --color-primary-fixed: #ffe088;
-  --color-on-primary: #2b2204;
+  --color-on-primary: #1c1402;
   --color-secondary: #e9c176;
   --color-secondary-fixed: #ffdea5;
   --color-secondary-fixed-dim: #e9c176;
-  --color-tertiary: #e9cd67;
+  --color-tertiary: #fadc72;
 }
 
 @layer base {
@@ -38,7 +41,7 @@
     margin: 0;
     padding: 0;
     min-width: 320px;
-    background: #0b0b0c;
+    background: #070706;
     scroll-behavior: smooth;
     scroll-padding-top: 76px;
   }
@@ -48,10 +51,12 @@
     padding: 0;
     min-width: 320px;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.08), transparent),
-      linear-gradient(180deg, #0a0908 0%, #121110 30%, #0c0b0a 70%, #090807 100%);
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212, 175, 55, 0.12), transparent 75%),
+      radial-gradient(circle at 90% 80%, rgba(242, 202, 80, 0.04), transparent 50%),
+      radial-gradient(circle at 10% 40%, rgba(212, 175, 55, 0.03), transparent 45%),
+      linear-gradient(180deg, #070706 0%, #0f0e0c 25%, #0b0a08 65%, #060505 100%);
     color: #e9e4dc;
-    font-family: "Hanken Grotesk", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Plus Jakarta Sans", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -63,8 +68,8 @@
     overflow-x: clip;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
-    font-family: "Bodoni Moda", "Cinzel", "Cormorant Garamond", Georgia, serif;
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-display, .font-cinzel {
+    font-family: "Cinzel", "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
     text-wrap: balance;
   }
 
@@ -91,8 +96,8 @@
   }
 
   ::selection {
-    background: rgba(242, 202, 80, 0.28);
-    color: #fffdf5;
+    background: rgba(242, 202, 80, 0.35);
+    color: #ffffff;
   }
 }
 
@@ -115,66 +120,51 @@
 /* Premium micro-interactions & Smooth Transitions */
 @media (prefers-reduced-motion: no-preference) {
   button, a, img {
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
-/* Keep long text and controls comfortable on small screens. */
-@media (max-width: 640px) {
-  body {
-    font-size: 15px;
-  }
-
-  input, select, textarea {
-    font-size: 16px !important;
-  }
-}
-
-/* Subtle custom gold scrollbar */
+/* Custom gold scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080809;
+  background: #060505;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #5a4b2c, #29241b);
-  border: 1px solid #11100e;
+  background: linear-gradient(180deg, #6c5a33, #2d2618);
+  border: 1px solid #14120e;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f2ca50;
 }
 
-/* Custom Keyframes */
+/* Keyframes */
 @keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 @keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(0.5deg);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.4deg); }
 }
 
 @keyframes ambientPulse {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.65;
-    transform: scale(1.04);
-  }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes goldGlowSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .animate-float-slow {
@@ -182,33 +172,63 @@
 }
 
 .animate-ambient-pulse {
-  animation: ambientPulse 8s ease-in-out infinite;
+  animation: ambientPulse 7s ease-in-out infinite;
 }
 
-/* Gold Metallic Text Gradient */
+.animate-orbit {
+  animation: orbitRotate 24s linear infinite;
+}
+
+/* Gold Metallic Foil Gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #fff2cc 0%, #f2ca50 40%, #d4af37 70%, #aa8428 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fff0b8 20%, #f2ca50 50%, #d4af37 75%, #a67c1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gold-foil {
+  background: linear-gradient(90deg, #d4af37 0%, #fff2cc 25%, #f2ca50 50%, #ffe58f 75%, #d4af37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldGlowSweep 6s linear infinite;
 }
 
 .text-gold-subtle {
-  background: linear-gradient(135deg, #f8f4ec 0%, #e9c176 60%, #c5a059 100%);
+  background: linear-gradient(135deg, #fdfbf7 0%, #e9c176 55%, #b89343 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism Luxury Container */
+/* Glassmorphism Luxury Panels */
 .glass-gold-panel {
-  background: rgba(22, 20, 18, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(18, 16, 13, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(242, 202, 80, 0.15);
 }
 
 .glass-gold-panel:hover {
-  border-color: rgba(242, 202, 80, 0.5);
-  box-shadow: 0 10px 35px -5px rgba(212, 175, 55, 0.12);
+  border-color: rgba(242, 202, 80, 0.65);
+  box-shadow: 0 16px 50px -10px rgba(212, 175, 55, 0.18), inset 0 1px 0 rgba(255, 224, 136, 0.3);
+}
+
+/* Luxury 24k Gold Card Border Sheen */
+.gold-card-sheen {
+  position: relative;
+}
+.gold-card-sheen::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(242, 202, 80, 0.4), rgba(212, 175, 55, 0.05) 50%, rgba(242, 202, 80, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* Hide scrollbar for clean horizontal tabs */
@@ -223,5 +243,6 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4a4437 #080809;
+  scrollbar-color: #534934 #070706;
 }
+

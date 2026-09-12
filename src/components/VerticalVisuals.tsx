@@ -2,8 +2,7 @@ import React from 'react';
 
 /**
  * Visual effects and geometric vector art for the Strategic Portfolios / Key Verticals.
- * Designed with pure SVG and CSS effects — no external stock photography required.
- * Fully responsive and scalable across mobile, tablet, laptop, and desktop.
+ * Enhanced with dynamic animated SVG keyframes, orbital rotations, and glowing laser telemetry.
  */
 
 export const TradeVisualEffect: React.FC<{ className?: string }> = ({ className = '' }) => (
@@ -17,49 +16,51 @@ export const TradeVisualEffect: React.FC<{ className?: string }> = ({ className 
     >
       <defs>
         <radialGradient id="tradeGlow" cx="65%" cy="40%" r="65%">
-          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.22" />
-          <stop offset="55%" stopColor="#d4af37" stopOpacity="0.06" />
+          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.25" />
+          <stop offset="55%" stopColor="#d4af37" stopOpacity="0.08" />
           <stop offset="100%" stopColor="#d4af37" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="tradeCorridor" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#d4af37" stopOpacity="0.15" />
-          <stop offset="50%" stopColor="#f2ca50" stopOpacity="0.65" />
-          <stop offset="100%" stopColor="#ffe088" stopOpacity="0.9" />
+          <stop offset="0%" stopColor="#d4af37" stopOpacity="0.2" />
+          <stop offset="50%" stopColor="#f2ca50" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#ffe088" stopOpacity="0.95" />
         </linearGradient>
       </defs>
 
       {/* Ambient Radial Golden Glow */}
-      <circle cx="280" cy="130" r="150" fill="url(#tradeGlow)" />
+      <circle cx="280" cy="130" r="150" fill="url(#tradeGlow)" className="animate-pulse" />
 
       {/* Navigational Concentric Meridian Rings */}
-      <circle cx="280" cy="130" r="125" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.3" />
-      <circle cx="280" cy="130" r="88" stroke="currentColor" strokeWidth="0.9" opacity="0.4" />
-      <circle cx="280" cy="130" r="52" stroke="currentColor" strokeWidth="1" strokeDasharray="2 3" opacity="0.55" />
-      <circle cx="280" cy="130" r="20" stroke="#f2ca50" strokeWidth="1.2" opacity="0.75" />
+      <circle cx="280" cy="130" r="125" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.35" />
+      <circle cx="280" cy="130" r="88" stroke="currentColor" strokeWidth="0.9" opacity="0.45" />
+      <circle cx="280" cy="130" r="52" stroke="currentColor" strokeWidth="1" strokeDasharray="2 3" opacity="0.6" />
+      <circle cx="280" cy="130" r="20" stroke="#f2ca50" strokeWidth="1.4" opacity="0.85" />
 
       {/* Latitude & Longitude Geopolitical Grid */}
-      <line x1="80" y1="130" x2="410" y2="130" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.35" />
+      <line x1="60" y1="130" x2="410" y2="130" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.35" />
       <line x1="280" y1="0" x2="280" y2="300" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.35" />
       <ellipse cx="280" cy="130" rx="125" ry="50" stroke="currentColor" strokeWidth="0.7" opacity="0.3" />
       <ellipse cx="280" cy="130" rx="50" ry="125" stroke="currentColor" strokeWidth="0.7" opacity="0.25" />
 
       {/* CEPA Bilateral Corridors (GCC to India & Transnational Routes) */}
-      <path d="M 50 250 Q 180 80 280 130 T 390 100" stroke="url(#tradeCorridor)" strokeWidth="2" fill="none" />
-      <path d="M 90 280 Q 210 180 280 130 T 370 200" stroke="url(#tradeCorridor)" strokeWidth="1.2" strokeDasharray="5 3" fill="none" />
+      <path d="M 50 250 Q 180 80 280 130 T 390 100" stroke="url(#tradeCorridor)" strokeWidth="2.2" fill="none" />
+      <path d="M 90 280 Q 210 180 280 130 T 370 200" stroke="url(#tradeCorridor)" strokeWidth="1.4" strokeDasharray="6 4" fill="none" />
 
-      {/* Waypoint Wayfinding Nodes */}
+      {/* Waypoint Wayfinding Nodes with Pulsing Glow */}
       <circle cx="50" cy="250" r="4.5" fill="#f2ca50" />
-      <circle cx="50" cy="250" r="9" stroke="#f2ca50" strokeWidth="0.8" opacity="0.6" />
-      <circle cx="280" cy="130" r="5" fill="#f2ca50" />
-      <circle cx="280" cy="130" r="11" stroke="#f2ca50" strokeWidth="1" opacity="0.7" />
-      <circle cx="390" cy="100" r="4" fill="#ffe088" />
+      <circle cx="50" cy="250" r="10" stroke="#f2ca50" strokeWidth="0.8" opacity="0.7" className="animate-ping" style={{ transformOrigin: '50px 250px', animationDuration: '3s' }} />
+      <circle cx="280" cy="130" r="5.5" fill="#f2ca50" />
+      <circle cx="280" cy="130" r="12" stroke="#f2ca50" strokeWidth="1" opacity="0.8" className="animate-ping" style={{ transformOrigin: '280px 130px', animationDuration: '4s' }} />
+      <circle cx="390" cy="100" r="4.5" fill="#ffe088" />
 
       {/* Sovereign 8-Point Compass Rose Vector */}
-      <path d="M 280 110 L 284 126 L 300 130 L 284 134 L 280 150 L 276 134 L 260 130 L 276 126 Z" fill="#f2ca50" />
+      <g style={{ transformOrigin: '280px 130px' }} className="animate-orbit">
+        <path d="M 280 106 L 285 125 L 304 130 L 285 135 L 280 154 L 275 135 L 256 130 L 275 125 Z" fill="#f2ca50" opacity="0.9" />
+      </g>
 
       {/* Coordinate Telemetry Marks */}
-      <text x="294" y="50" fill="#e9c176" fontSize="7.5" fontFamily="monospace" letterSpacing="2" opacity="0.75">GCC • 24°N 54°E</text>
-      <text x="294" y="255" fill="#e9c176" fontSize="7.5" fontFamily="monospace" letterSpacing="2" opacity="0.75">IND • 28°N 77°E</text>
+      <text x="294" y="48" fill="#e9c176" fontSize="7.5" fontFamily="monospace" letterSpacing="2" opacity="0.85">GCC • 24°N 54°E</text>
+      <text x="294" y="255" fill="#e9c176" fontSize="7.5" fontFamily="monospace" letterSpacing="2" opacity="0.85">IND • 28°N 77°E</text>
     </svg>
   </div>
 );
@@ -75,44 +76,43 @@ export const MediaVisualEffect: React.FC<{ className?: string }> = ({ className 
     >
       <defs>
         <radialGradient id="mediaGlow" cx="68%" cy="45%" r="65%">
-          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.22" />
-          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.25" />
+          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.08" />
           <stop offset="100%" stopColor="#d4af37" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="mediaWave" x1="0%" y1="50%" x2="100%" y2="50%">
-          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.1" />
-          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#ffe088" stopOpacity="0.85" />
+          <stop offset="0%" stopColor="#f2ca50" stopOpacity="0.15" />
+          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#ffe088" stopOpacity="0.95" />
         </linearGradient>
       </defs>
 
-      <circle cx="285" cy="135" r="140" fill="url(#mediaGlow)" />
+      <circle cx="285" cy="135" r="140" fill="url(#mediaGlow)" className="animate-pulse" />
 
       {/* Anamorphic 2.39:1 Cinema Frame Guidelines */}
-      <rect x="130" y="65" width="260" height="110" rx="3" stroke="currentColor" strokeWidth="0.8" strokeDasharray="6 4" opacity="0.35" />
-      <rect x="160" y="80" width="200" height="80" rx="2" stroke="currentColor" strokeWidth="0.5" opacity="0.25" />
+      <rect x="130" y="65" width="260" height="110" rx="3" stroke="currentColor" strokeWidth="0.8" strokeDasharray="6 4" opacity="0.4" />
+      <rect x="160" y="80" width="200" height="80" rx="2" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
 
       {/* Precision Focus Reticle Crosshairs */}
-      <path d="M 245 115 L 245 125 M 245 145 L 245 155 M 235 135 L 225 135 M 265 135 L 255 135" stroke="#f2ca50" strokeWidth="1.2" opacity="0.75" />
+      <path d="M 245 115 L 245 125 M 245 145 L 245 155 M 235 135 L 225 135 M 265 135 L 255 135" stroke="#f2ca50" strokeWidth="1.3" opacity="0.85" />
 
       {/* Cinematic Aperture Blades & Iris Geometry */}
       <circle cx="285" cy="135" r="85" stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
       <circle cx="285" cy="135" r="58" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
-      <circle cx="285" cy="135" r="28" stroke="#f2ca50" strokeWidth="1.3" opacity="0.8" />
+      <circle cx="285" cy="135" r="28" stroke="#f2ca50" strokeWidth="1.4" opacity="0.85" />
 
       {/* Hexagonal Diaphragm Aperture */}
       <path d="M 285 78 L 334 107 L 334 163 L 285 192 L 236 163 L 236 107 Z" stroke="currentColor" strokeWidth="0.8" opacity="0.45" />
-      <path d="M 285 88 L 324 111 L 324 159 L 285 182 L 246 159 L 246 111 Z" stroke="#e9c176" strokeWidth="0.6" opacity="0.35" />
 
       {/* Harmonic Soundwave Spectrum Curves */}
-      <path d="M 40 135 Q 80 85 120 135 T 200 135 T 285 135" stroke="url(#mediaWave)" strokeWidth="1.6" fill="none" />
-      <path d="M 60 135 Q 100 165 140 135 T 220 135" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.35" fill="none" />
+      <path d="M 40 135 Q 80 85 120 135 T 200 135 T 285 135" stroke="url(#mediaWave)" strokeWidth="1.8" fill="none" />
+      <path d="M 60 135 Q 100 165 140 135 T 220 135" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.4" fill="none" />
 
       {/* Optical Film Track & Metadata Stamps */}
-      <line x1="130" y1="45" x2="390" y2="45" stroke="currentColor" strokeWidth="0.6" opacity="0.3" />
-      <line x1="130" y1="195" x2="390" y2="195" stroke="currentColor" strokeWidth="0.6" opacity="0.3" />
-      <text x="140" y="57" fill="#e9c176" fontSize="7" fontFamily="monospace" letterSpacing="2" opacity="0.7">24 FPS • 2.39:1 • CANNES / VENICE</text>
-      <text x="140" y="210" fill="#f2ca50" fontSize="7" fontFamily="monospace" letterSpacing="1.5" opacity="0.7">ACCOLADES TRAJECTORY • 96kHz DOLBY</text>
+      <line x1="130" y1="45" x2="390" y2="45" stroke="currentColor" strokeWidth="0.6" opacity="0.35" />
+      <line x1="130" y1="195" x2="390" y2="195" stroke="currentColor" strokeWidth="0.6" opacity="0.35" />
+      <text x="140" y="57" fill="#e9c176" fontSize="7" fontFamily="monospace" letterSpacing="2" opacity="0.8">24 FPS • 2.39:1 • CANNES / VENICE</text>
+      <text x="140" y="210" fill="#f2ca50" fontSize="7" fontFamily="monospace" letterSpacing="1.5" opacity="0.8">ACCOLADES TRAJECTORY • 96kHz DOLBY</text>
     </svg>
   </div>
 );
@@ -128,18 +128,18 @@ export const LeadershipVisualEffect: React.FC<{ className?: string }> = ({ class
     >
       <defs>
         <radialGradient id="leadGlow" cx="68%" cy="40%" r="65%">
-          <stop offset="0%" stopColor="#ffdea5" stopOpacity="0.22" />
-          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#ffdea5" stopOpacity="0.25" />
+          <stop offset="60%" stopColor="#d4af37" stopOpacity="0.08" />
           <stop offset="100%" stopColor="#d4af37" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="leadConstellation" x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#d4af37" stopOpacity="0.2" />
-          <stop offset="55%" stopColor="#ffdea5" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0.9" />
+          <stop offset="55%" stopColor="#ffdea5" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0.95" />
         </linearGradient>
       </defs>
 
-      <circle cx="280" cy="130" r="145" fill="url(#leadGlow)" />
+      <circle cx="280" cy="130" r="145" fill="url(#leadGlow)" className="animate-pulse" />
 
       {/* Sovereign Civic Crown / Crest Geometry */}
       <path d="M 205 160 L 220 95 L 255 130 L 280 75 L 305 130 L 340 95 L 355 160 Z" stroke="currentColor" strokeWidth="1" opacity="0.45" />
